@@ -1,6 +1,6 @@
 pipeline {
   agent {
-    docker { label 'mvn-jdk-8' }
+    docker { label 'maven-jdk-8' }
     }
     
   }

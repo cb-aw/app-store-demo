@@ -20,10 +20,11 @@ pipeline {
             
           },
           "Chrome": {
-            agent {     docker {       label 'docker' } }
+            agent {    label 'docker' }
+            steps {
             sh 'echo \'setting up selenium environment\''
             sh 'ping -c 3 localhost'
-         
+            }
             
           },
           "Internet Explorer": {

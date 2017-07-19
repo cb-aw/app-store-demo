@@ -7,6 +7,7 @@ pipeline {
       }
     }
     stage('Browser Tests') {
+                  agent {    label 'docker' }
       steps {
         parallel(
           "Firefox": {
@@ -20,12 +21,8 @@ pipeline {
             
           },
           "Chrome": {
-            agent {    label 'docker' }
-            steps {
             sh 'echo \'setting up selenium environment\''
             sh 'ping -c 3 localhost'
-            }
-            
           },
           "Internet Explorer": {
             sh 'echo \'setting up selenium environment\''

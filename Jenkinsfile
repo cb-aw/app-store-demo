@@ -7,7 +7,7 @@ pipeline {
       }
     }
     stage('Browser Tests') {
-                  agent {    label 'docker' }
+            
       steps {
         parallel(
           "Firefox": {
@@ -33,6 +33,7 @@ pipeline {
       }
     }
     stage('Static Analysis') {
+      agent {    label 'xlarge' }
       steps {
         sh 'mvn findbugs:findbugs'
       }

@@ -20,7 +20,7 @@ pipeline {
             
           },
           "Chrome": {
-            agent { label 'docker' }
+            agent {     docker {       label 'docker' } }
             sh 'echo \'setting up selenium environment\''
             sh 'ping -c 3 localhost'
          

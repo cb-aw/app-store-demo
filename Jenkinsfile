@@ -33,7 +33,6 @@ pipeline {
       }
     }
     stage('Static Analysis') {
-      agent {    label 'xlarge' }
       steps {
         sh 'mvn findbugs:findbugs'
       }

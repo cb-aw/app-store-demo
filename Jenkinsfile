@@ -1,6 +1,6 @@
 pipeline {
   agent {
-   label { 'maven-jdk-8' }
+   label 'maven-jdk-8'
   
   }
   stages {

@@ -1,8 +1,7 @@
 pipeline {
   agent {
     docker { label 'maven-jdk-8' }
-    }
-    
+  
   }
   stages {
     stage('Build') {

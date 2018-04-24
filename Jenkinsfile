@@ -34,11 +34,7 @@ pipeline {
             sh 'ping -c 4 localhost'
           }
         }
-        stage('edge') {
-          steps {
-            echo 'running some tests on edge...'
-          }
-        }
+        
       }
     }
     stage('Static Analysis') {

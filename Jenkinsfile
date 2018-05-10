@@ -43,11 +43,6 @@ pipeline {
             sh 'mvn findbugs:findbugs'
           }
         }
-        stage('new-step') {
-          steps {
-            echo 'new-step'
-          }
-        }
       }
     }
     stage('Deploy') {

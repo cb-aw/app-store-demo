@@ -34,12 +34,20 @@ pipeline {
             sh 'ping -c 4 localhost'
           }
         }
-        
       }
     }
     stage('Static Analysis') {
-      steps {
-        sh 'mvn findbugs:findbugs'
+      parallel {
+        stage('Static Analysis') {
+          steps {
+            sh 'mvn findbugs:findbugs'
+          }
+        }
+        stage('new-step') {
+          steps {
+            echo 'new-step'
+          }
+        }
       }
     }
     stage('Deploy') {

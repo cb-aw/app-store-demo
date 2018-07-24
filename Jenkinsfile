@@ -47,7 +47,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-          input id: 'test', message: 'HelloProceed with Deployment?', parameters: [string(defaultValue: '', description: '', name: 'myparam')]
+          input id: 'test', message: 'Proceed with Deployment?', parameters: [string(defaultValue: '', description: '', name: 'Proceed?')]
                  sh "echo ${env}"
         sh 'mvn source:jar package -Dmaven.test.skip'
       }

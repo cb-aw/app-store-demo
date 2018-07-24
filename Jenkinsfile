@@ -47,9 +47,10 @@ pipeline {
     }
     stage('Deploy') {
       steps {
+          //input message: 'User input required', ok: 'Release!',
+            // parameters: [choice(name: ' description: 'Ok to deploy?')]
           input message: 'User input required', ok: 'Release!',
-            parameters: [choice(name: 'RELEASE', choices: 'yes/no', description: 'Ok to deploy?')]
-         
+            parameters: [choice(description: 'Proceed to Deploy?')]
           
           sh 'mvn source:jar package -Dmaven.test.skip'
       }

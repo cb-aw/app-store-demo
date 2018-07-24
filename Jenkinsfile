@@ -48,9 +48,8 @@ pipeline {
     stage('Deploy') {
       steps {
           input message: 'User input required', ok: 'Release!',
-            parameters: [choice(name: 'RELEASE_SCOPE', choices: 'patch\nminor\nmajor', description: 'What is the release scope?')]
-          echo "env: ${env.RELEASE_SCOPE}"
-          echo "params: ${params.RELEASE_SCOPE}"
+            parameters: [choice(name: 'RELEASE', choices: 'yes/no', description: 'Ok to deploy?')]
+         
           
           sh 'mvn source:jar package -Dmaven.test.skip'
       }
